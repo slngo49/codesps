@@ -1,7 +1,10 @@
 @extends ('layout')
 
 @section ('content')
-<h3>SPS Names List<h3>
+
+<div class="col-md-4 col-md-offset-4 jumbotron">
+    <h3>SPS Names List<h3>
+    <hr>
         <ul>
             @foreach ($names as $name)
         <li>
@@ -9,5 +12,9 @@
         </li>
             @endforeach
         </ul>
+        <hr>
         <a href="/names/create" class="btn btn-primary">Add Name</a>
+            
+            </div>
+            
             @endsection
