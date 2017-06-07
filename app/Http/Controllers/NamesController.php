@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Name;
+use App\Mail\NameAdded;
 
 class NamesController extends Controller
 {
@@ -33,6 +34,8 @@ class NamesController extends Controller
             'title' => 'required|min: 3'
         ]);
         Name::create(request(['title']));
+
+        \Mail::to('slngo49@gmail.com')->send(new nameAdded);
 
         return redirect('/');
     }
